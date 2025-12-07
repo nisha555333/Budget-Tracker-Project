@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BudgetMate | Auth Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #dcefff, #a6d5fa);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card-container {
+      width: 900px;
+      height: 500px;
+      perspective: 1500px;
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+    }
+
+    .flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      background: #fff;
+      backface-visibility: hidden;
+    }
+
+    .card-front, .card-back {
+      background-color: #fff;
+    }
+
+    .info, .form {
+      width: 50%;
+      padding: 40px;
+    }
+
+    .info {
+      background: linear-gradient(to bottom right, #3498db, #6dd5fa);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .info h2 {
+      margin-bottom: 20px;
+    }
+
+    .info ul {
+      padding-left: 20px;
+    }
+
+    .info ul li {
+      margin-bottom: 10px;
+      list-style: "✔ ";
+    }
+
+    .form h2 {
+      margin-bottom: 20px;
+      color: #3498db;
+    }
+
+    .form input {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .form button {
+      padding: 12px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .toggle-buttons {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .toggle-buttons button {
+      background: none;
+      border: none;
+      color: #3498db;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+
+    /* Back Face Styling */
+    .card-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="card-container">
+    <div class="card" id="authCard">
+      
+      <!-- Login Face -->
+      <div class="card-face card-front">
+        <div class="info">
+          <h2>Welcome Back to BudgetMate</h2>
+          <p>Track your expenses, manage your budgets, and visualize your financial goals.</p>
+          <ul>
+            <li>Login securely to access your dashboard</li>
+            <li>Daily and monthly expense charts</li>
+            <li>Set personalized spending limits</li>
+          </ul>
+        </div>
+        <div class="form">
+          <h2>Login</h2>
+          <input type="text" placeholder="Username" />
+          <input type="password" placeholder="Password" />
+          <button>Login</button>
+          <div class="toggle-buttons">
+            <p>New here? <button onclick="flipCard(true)">Sign Up</button></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sign Up Face -->
+      <div class="card-face card-back">
+        <div class="info">
+          <h2>Join BudgetMate Today</h2>
+          <p>Create your free account and get started with smarter money tracking.</p>
+          <ul>
+            <li>Simple budget planner</li>
+            <li>Interactive financial insights</li>
+            <li>Data privacy & secure storage</li>
+          </ul>
+        </div>
+        <div class="form">
+          <h2>Sign Up</h2>
+          <input type="text" placeholder="Full Name" />
+          <input type="email" placeholder="Email" />
+          <input type="password" placeholder="Create Password" />
+          <button>Register</button>
+          <div class="toggle-buttons">
+            <p>Already have an account? <button onclick="flipCard(false)">Login</button></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const authCard = document.getElementById('authCard');
+
+    function flipCard(toSignUp) {
+      if (toSignUp) {
+        authCard.classList.add('flipped');
+      } else {
+        authCard.classList.remove('flipped');
+      }
+    }
+  </script>
+</body>
+</html>

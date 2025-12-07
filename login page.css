@@ -1,0 +1,151 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #dff6ff, #cce3ff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .container {
+      background-color: #ffffff;
+      width: 90%;
+      max-width: 1000px;
+      display: flex;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .left {
+      width: 50%;
+      padding: 30px;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .right {
+      width: 50%;
+      padding: 40px 30px;
+      background: linear-gradient(to bottom right, #2980b9, #6dd5fa);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .right h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .right p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Flip Container */
+    .flip-container {
+      perspective: 1000px;
+      width: 100%;
+    }
+
+    .flipper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+
+    .flip-container.flipped .flipper {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      top: 0;
+      left: 0;
+    }
+
+    .back {
+      transform: rotateY(180deg);
+    }
+
+    /* Card Styling */
+    .card {
+      width: 100%;
+      min-height: 400px;
+      padding: 30px;
+      background-color: #f4faff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+    }
+
+    .card h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #2980b9;
+    }
+
+    .card label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: 500;
+    }
+
+    .card input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-bottom: 15px;
+    }
+
+    .btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    .btns button {
+      padding: 10px;
+      width: 48%;
+      border: none;
+      background-color: #2980b9;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .btns button:hover {
+      background-color: #1f5f8b;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left, .right {
+        width: 100%;
+      }
+
+      .right {
+        padding: 20px;
+        text-align: center;
+      }
+    }

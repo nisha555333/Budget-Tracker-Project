@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="feature2.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Budget Tracker</h1>
+
+    <label for="salary">Monthly Salary (₹):</label>
+    <input type="number" id="salary" placeholder="Enter your salary" />
+
+    <label for="savingsGoal">Monthly Savings Goal (₹):</label>
+    <input type="number" id="savingsGoal" placeholder="Enter your savings goal" />
+
+    <h2>Daily Expenses</h2>
+    <div class="expense-inputs">
+      <input type="text" id="expenseName" placeholder="Expense name" />
+      <input type="number" id="expenseAmount" placeholder="Amount" />
+    </div>
+    <button onclick="addExpense()">Add Expense</button>
+    <button onclick="calculateBudget()">Calculate Budget</button>
+
+    <div id="expenseListContainer">
+      <h3>Added Expenses</h3>
+      <ul id="expenseList"></ul>
+    </div>
+
+    <div class="charts-container">
+      <div>
+        <h3>Actual Expenses</h3>
+        <canvas id="actualPieChart"></canvas>
+        <canvas id="actualBarChart"></canvas>
+      </div>
+      <div>
+        <h3>Budget Plan</h3>
+        <canvas id="planPieChart"></canvas>
+        <canvas id="planBarChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="feature2.js"></script>
+</body>
+</html>

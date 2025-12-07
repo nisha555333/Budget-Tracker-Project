@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget Tracker</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Budget Tracker</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="login page.html">Login</a></li>
+    </ul>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </nav>
+
+  <!-- Home -->
+  <section class="hero" id="home">
+    <h1>Welcome to Our Budget Tracker</h1>
+    <p>Perfect money saving plans are generated for you..</p>
+    <a href="#services" class="btn">Get Started</a>
+  </section>
+
+  <!-- About -->
+  <section class="about-section" id="about">
+    <div class="about-content">
+      <h1>About Our Website</h1>
+      <p>We help users plan and manage their finances effectively. Our tools are designed to be simple, accurate, and user-friendly.</p>
+      <p>Budget Tracker brings transparency and control to your financial life.</p>
+    </div>
+    <div class="about-image">
+      <img src="https://sdmntprnorthcentralus.oaiusercontent.com/files/00000000-3d14-622f-ac58-914e945b43ce/raw?se=2025-08-28T11%3A45%3A35Z&sp=r&sv=2024-08-04&sr=b&scid=88a753e7-807b-500d-a90c-473c4617c8e3&skoid=e9d2f8b1-028a-4cff-8eb1-d0e66fbefcca&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2025-08-27T20%3A37%3A53Z&ske=2025-08-28T20%3A37%3A53Z&sks=b&skv=2024-08-04&sig=M5%2BiTNPHHQM9Z4IB9SwtV0cU/5fRAzjdQDjtz/A0qaY%3D" alt="About Image" />
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="features-wrapper" id="services">
+    <div class="features">
+      <div class="feature-image">
+        <img src="https://i.ytimg.com/vi/zYVp8OQrOFE/maxresdefault.jpg" alt="Budget Dashboard" class="pic">
+      </div>
+      <div class="features-content">
+        <div class="feature">
+          <a href="feature1.html"><h2>Feature 1</h2></a>
+          <p>Modern and responsive layouts.</p>
+        </div>
+        <div class="feature">
+          <a href="feature2.html"><h2>Feature 2</h2></a>
+          <p>SEO-friendly and optimized code.</p>
+        </div>
+        <div class="feature">
+          <a href="feature3.html"><h2>Feature 3</h2></a>
+          <p>Fast and reliable performance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Budget Tracker. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('nav-links').classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
